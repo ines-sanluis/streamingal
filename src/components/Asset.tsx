@@ -25,7 +25,7 @@ const AssetWrapper = styled.div<AssetWrapperProps>`
   }
 
 const AssetBox = styled.div<AssetBoxProps>`
-  box-shadow: ${({ focused }) => focused && "0px 15px 25px rgba(0,194,203,0.79)"};
+  box-shadow: ${({ focused }) => focused && "0px 15px 25px rgba(0,153,254,0.79)"};
   transform: ${({ focused }) => focused && "scale(1.08)"};
   transition: transform 450ms;
   width: 250px;

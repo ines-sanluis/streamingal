@@ -11,7 +11,7 @@ const Column = styled.div`
 `;
 
 const ColumnKey = styled.p`
-  color: #00c2cb;
+  color: #0099CC;
   font-weight: 800;
   padding: 10px;
   padding-left: 0px;

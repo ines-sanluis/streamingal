@@ -24,14 +24,14 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   ${({isSelected}) => !isSelected && css`
     cursor: pointer;
     &: hover {
-      color: #00c2cb;
+      color: #0099CC;
     }
   }`}
   ${({focused}) => focused && css`
-    color: #00c2cb;
+    color: #0099CC;
   }`}
   ${({highlighted, isSelected}) => highlighted && isSelected && css`
-    border-bottom: 2px solid #00c2cb;
+    border-bottom: 2px solid #0099CC;
   `}
   ${({highlighted}) => highlighted && css`
     font-size: 18px;

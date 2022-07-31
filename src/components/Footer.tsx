@@ -24,11 +24,11 @@ interface NameProps {
 }
 
 const Name = styled.a<NameProps>`
-  color: ${({focused}) => focused ? "#00c2cb" : "white"};
+  color: ${({focused}) => focused ? "#0099CC" : "white"};
   text-decoration: none;
   cursor: pointer;
   &:hover{
-    color: #00c2cb
+    color: #0099CC
   }
 `;
 

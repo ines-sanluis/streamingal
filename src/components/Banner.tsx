@@ -62,7 +62,7 @@ const Label = styled.span<LabelProps>`
     ${({isLast}) => !isLast && css`
     content: "\\2022";
     margin-left: 15px;
-    color: #00c2cb;
+    color: #0099CC;
   `}
   }
 `
