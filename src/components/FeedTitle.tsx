@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Title = styled.p`
-  color: white;
   padding-bottom: 22px;
   font-weight: 700;
   padding-left: 40px;
@@ -15,7 +14,7 @@ const Title = styled.p`
 
 const Description = styled.span`
   margin-left: 10px;
-  color: #0099CC;
+  color: ${({theme}) => theme.colors.accent};
 `;
 
 const DescriptionText = styled.span<FocusedProps>`
@@ -35,7 +34,7 @@ const DescriptionArrow = styled.span<OuterFocusProps>`
   position: absolute;
   margin-right: 15px;
   margin-top: 5px;
-  border: solid #0099CC;
+  border: solid ${({theme}) => theme.colors.accent};
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;

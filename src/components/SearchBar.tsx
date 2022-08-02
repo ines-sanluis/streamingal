@@ -7,42 +7,41 @@ import { useNavigate } from "react-router-dom";
 import { PATHS } from "../constants";
 
 interface WrapperProps {
-  focused: boolean
+    focused: boolean
 }
 const Wrapper = styled.div<WrapperProps>`
-  margin-left: auto;
-  border: ${({focused}) => focused ? "1px solid white" : "none"};
+    margin-left: auto;
+    border: ${({focused, theme}) => focused ? `1px solid ${theme.colors.input.border}` : "none"};
 `;
 
 const SearchInputs = styled.div`
-  display: flex;
+    display: flex;
 `;
 
 const Input = styled.input`
-  background-color: rgba(51, 51, 51, 0.5);
-  color: white;
-  border: none;
-  border-radius: 2px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  font-size: 18px;
-  padding: 15px;
-  height: 10px;
-  width: 200px;
-  &:focus{
-    outline: none;
-  }
+    background-color: ${({theme}) => theme.colors.input.background};
+    color: ${({theme}) => theme.colors.text};
+    border: none;
+    border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 18px;
+    padding: 15px;
+    height: 10px;
+    width: 200px;
+    &:focus{
+        outline: none;
+    }
 `;
 
 const Icon = styled.div`
-  height: 40px;
-  width: 50px;
-  background-color: rgba(51, 51, 51, 0.5);
-  color: white;
-  display: grid;
-  place-items: center;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+    height: 40px;
+    width: 50px;
+    background-color: ${({theme}) => theme.colors.input.icon};
+    display: grid;
+    place-items: center;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 `;
 
 function SearchBar() {

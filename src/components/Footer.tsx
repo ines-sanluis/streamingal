@@ -4,8 +4,7 @@ import styled from "styled-components";
 import logo from "../assets/tmdb_logo_short.svg";
 
 const Wrapper = styled.div`
-  background-color: #141414;
-  color: #b3b3b3;
+  background-color: ${({theme}) => theme.colors.body};
   text-align: right;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 17px;
@@ -24,11 +23,11 @@ interface NameProps {
 }
 
 const Name = styled.a<NameProps>`
-  color: ${({focused}) => focused ? "#0099CC" : "white"};
+  color: ${({focused, theme}) => focused ? theme.colors.accent : theme.colors.text};
   text-decoration: none;
   cursor: pointer;
   &:hover{
-    color: #0099CC
+    color: ${({theme}) => theme.colors.accent};
   }
 `;
 

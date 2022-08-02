@@ -13,25 +13,24 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   padding: 0px;
   margin-right: 20px;
   margin-top: 5px;
-  color: #e5e5e5;
   cursor: default;
   background-color: transparent;
   border: none;
+  color: ${({theme}) => theme.colors.text};
   ${({isSelected}) => isSelected && css`
     font-weight: 700;
-    color: #ffff;
   }`}
   ${({isSelected}) => !isSelected && css`
     cursor: pointer;
     &: hover {
-      color: #0099CC;
+      color: ${({theme}) => theme.colors.accent};
     }
   }`}
   ${({focused}) => focused && css`
-    color: #0099CC;
+    color: ${({theme}) => theme.colors.accent};
   }`}
-  ${({highlighted, isSelected}) => highlighted && isSelected && css`
-    border-bottom: 2px solid #0099CC;
+  ${({highlighted, isSelected, theme}) => highlighted && isSelected && css`
+    border-bottom: 2px solid ${theme.colors.accent};
   `}
   ${({highlighted}) => highlighted && css`
     font-size: 18px;

@@ -5,32 +5,34 @@ import { PATHS } from "../constants";
 import TextButton from "./TextButton";
 import SearchBar from "./SearchBar";
 import logo from "../assets/logo.png";
+import { DefaultTheme } from "../theme/GlobalStyles";
 
 interface BarProps {
-  black: boolean;
+    black: boolean;
+    theme: DefaultTheme;
 }
 
 const Bar = styled.div<BarProps>`
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 10pt;
-  background-color: ${({black}) => black && "#141414"}
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 10pt;
+    background-color: ${({black, theme}) => black && theme.colors.body};
 `
 
 const Contents = styled.div`
-  display: flex;
-  padding: 13px;
-  padding-left: 20px;
+    display: flex;
+    padding: 13px;
+    padding-left: 20px;
 `;
 
 const Logo = styled.img`
-  margin: 0;
-  margin-right: 40px;
-  margin-top: 8px;
-  width: 150px;
-  height: 30px;
+    margin: 0;
+    margin-right: 40px;
+    margin-top: 8px;
+    width: 150px;
+    height: 30px;
 `;
 
 function Nav(){

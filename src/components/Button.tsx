@@ -44,13 +44,13 @@ const MyButton = styled.button<MyButtonProps>`
   padding-left: ${({isIcon}) => isIcon ? "1.5rem": "3rem"};
   padding-right: ${({isIcon}) => isIcon ? "1.5rem": "3rem"};
   padding-top: ${({isIcon}) => isIcon ? "0.5rem": "1rem"};
-  background-color: ${({focused}) => focused ? "#e6e6e6" : "rgba(51, 51, 51, 0.5)"};
+  background-color: ${({focused, theme}) => theme.colors.button[focused ? "focused " : "default"].background};
   padding-bottom: ${({isIcon}) => isIcon ? "0.5rem": "1rem"};
-  color: ${({focused}) => focused ? "#000" : "white"};
+  color: ${({focused, theme}) => theme.colors.button[focused ? "focused " : "default"].text};
   margin-right: 20px;
   &:hover {
-    color: #000;
-    background-color: #e6e6e6;
+    color: ${({theme}) => theme.colors.button.focused.text};
+    background-color:  ${({theme}) => theme.colors.button.focused.background};
     transition: all 0.2s;
   }
 `;

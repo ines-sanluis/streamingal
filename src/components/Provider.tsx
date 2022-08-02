@@ -2,6 +2,7 @@ import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import React from "react";
 import styled, { css } from "styled-components";
 import { IMAGE_PATH } from "../constants";
+import { hexToRgba } from "../utils/colors";
 import { ProviderType } from "../utils/models/streams";
 import getProviderLink from "../utils/providers";
 
@@ -16,11 +17,11 @@ const Image = styled.img<ImageProps>`
   cursor: pointer;
   margin-right: 20px;
   &:hover {
-    box-shadow: 0px 0px 15px rgba(0,194,203,0.79);
+    box-shadow: ${({theme }) => `0px 0px 15px ${hexToRgba(theme.colors.accent, 0.79)}`};
     transform: scale(1.08);
   }
   ${({focused}) => focused && css`
-    box-shadow: 0px 0px 15px rgba(0,194,203,0.79);
+    box-shadow: ${({theme }) => `0px 0px 15px ${hexToRgba(theme.colors.accent, 0.79)}`};
     transform: scale(1.08);
   }`}
 `;

@@ -1,0 +1,52 @@
+{
+    "dark": {
+        "id": "T_001",
+        "name": "Dark",
+        "colors": {
+            "accent": "#0099CC",
+            "body": "#212121",
+            "text": "#e5e5e5",
+            "button": {
+                "default": {
+                    "text": "#e5e5e5",
+                    "background": "#000000"
+                },
+                "focused": {
+                    "text": "#000000",
+                    "background": "#e5e5e5"
+                }
+            },
+            "input": {
+                "icon": "#333333",
+                "background": "#333333",
+                "border": "#e5e5e5"
+            }
+        },
+        "font": "Helvetica, Arial, sans-serif"
+    },
+    "light": {
+        "id": "T_002",
+        "name": "Light",
+        "colors": {
+            "accent": "#0099CC",
+            "body": "#e5e5e5",
+            "text": "#212121",
+            "button": {
+                "default": {
+                    "text": "#e5e5e5",
+                    "background": "#212121"
+                },
+                "focused": {
+                    "text": "#e5e5e5",
+                    "background": "#000000"
+                }
+            },
+            "input": {
+                "icon": "#d9d9d9",
+                "background": "#d9d9d9",
+                "border": "#333333"
+            }
+        },
+        "font": "Helvetica, Arial, sans-serif"
+    }
+}

@@ -1,6 +1,7 @@
 import { FocusableComponentLayout, FocusDetails, KeyPressDetails, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import styled from "styled-components";
 import { IMAGE_BASE_URL } from "../constants";
+import { hexToRgba } from "../utils/colors";
 import { Show, Movie, getAssetDetails } from "../utils/models/asset";
 
 interface FocusedProps {
@@ -25,7 +26,7 @@ const AssetWrapper = styled.div<AssetWrapperProps>`
   }
 
 const AssetBox = styled.div<AssetBoxProps>`
-  box-shadow: ${({ focused }) => focused && "0px 15px 25px rgba(0,153,254,0.79)"};
+  box-shadow: ${({ focused, theme }) => focused && `0px 15px 25px ${hexToRgba(theme.colors.accent, 0.79)}`};
   transform: ${({ focused }) => focused && "scale(1.08)"};
   transition: transform 450ms;
   width: 250px;
@@ -42,7 +43,6 @@ const AssetBox = styled.div<AssetBoxProps>`
 `;
 
 const AssetTitle = styled.p<FocusedProps>`
-  color: white;
   margin-top: 30px;
   font-weight: 400;
   visibility: ${({ focused }) => !focused && "hidden"}

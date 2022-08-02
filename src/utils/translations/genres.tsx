@@ -48,6 +48,8 @@ function getGenreName(genre: Genre, type: string) : string {
         genreName = TV_GENRES[id];
     } else if (Object.keys(MOVIE_GENRES).includes(id.toString())){
         genreName = MOVIE_GENRES[id];
+    } else {
+        console.log(type, name, id.toString());
     }
     return genreName;
 }

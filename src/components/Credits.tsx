@@ -11,14 +11,13 @@ const Column = styled.div`
 `;
 
 const ColumnKey = styled.p`
-  color: #0099CC;
+  color: ${({theme}) => theme.colors.accent};
   font-weight: 800;
   padding: 10px;
   padding-left: 0px;
 `;
 
 const ColumnValue = styled.p`
-  color: #e7e7e7;
   padding: 10px;
 `;
 

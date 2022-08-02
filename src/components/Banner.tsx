@@ -7,6 +7,7 @@ import { Movie, Show, getAssetDetails, isTypeShow } from "../utils/models/asset"
 import getGenreName from "../utils/translations/genres";
 import tmdbIcon from "../assets/tmdb_logo.svg";
 import Button from "./Button";
+import { hexToRgba } from "../utils/colors";
 
 interface HeaderProps {
   imageUrl: string;
@@ -23,14 +24,14 @@ const Contents = styled.div`
   background: linear-gradient(
     -90deg,
     transparent,
-    rgba(20, 20, 20, 0.01),
-    #141414
+    ${({theme}) => hexToRgba(theme.colors.body, 0.01)},
+    ${({theme}) => theme.colors.body}
   ) top,
   linear-gradient(
       180deg,
       transparent,
-      rgba(20, 20, 20),
-      #141414
+      ${({theme}) => hexToRgba(theme.colors.body, 0.01)},
+      ${({theme}) => theme.colors.body}
   ) bottom;
   padding-left: 40px;
   padding-top: 130px;
@@ -62,7 +63,7 @@ const Label = styled.span<LabelProps>`
     ${({isLast}) => !isLast && css`
     content: "\\2022";
     margin-left: 15px;
-    color: #0099CC;
+    color: ${({theme}) => theme.colors.accent};
   `}
   }
 `
@@ -132,7 +133,7 @@ function Banner({
         episodes
     } = details;
 
-    const genres = fullGenres ? fullGenres.map((genre) => getGenreName(genre, type)) : [];
+    const genres = fullGenres ? fullGenres.map((genre) => getGenreName(genre, assetType)) : [];
     const hasRuntime = runtime !== undefined && Number.isFinite(runtime) && runtime !== 0;
     const hasGenres = genres !== undefined && genres.length > 0;
     const hasYear = year !== undefined && Number.isFinite(year);
